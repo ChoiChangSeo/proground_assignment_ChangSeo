@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
+import Modal from "../../commons/Modal";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -40,30 +41,6 @@ const EarnCoin = styled.div`
   text-align: center;
 `;
 
-const ModalBox = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-  height: 350px;
-  margin-left: -50px;
-  margin-right: -50px;
-  top: 10;
-  left: 50px;
-  right: 0;
-  bottom: 0;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid lightgray;
-  border-radius: 0.2rem;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 9999px;
-`;
-const Profile = styled.span`
-  font-size: 20px;
-  font-weight: bold;
-`;
 interface ListType {
   image?: string | undefined;
   price?: string | undefined;
@@ -71,24 +48,17 @@ interface ListType {
 }
 export default function ViewAllPage() {
   const [list, setList] = useState([]);
-  const [blobUser, setBlobUser] = useState<ListType[]>([]);
+  const [blobUser, setBlobUser] = useState<any>([]);
   const [modal, setModal] = useState(false);
 
-  const delay = (ms: number) => {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+  const openBlockUser = (e: any) => {
+    setBlobUser(e.currentTarget.id);
+    setModal((prev) => !prev);
   };
-
-  const openBlockUser = async (e: any) => {
-    const result = JSON.parse(e.target.id);
-    setBlobUser(result);
-    await delay(100);
-    return setModal((prev) => !prev);
-  };
-  console.log(blobUser);
 
   useEffect(() => {
     setList(JSON.parse(localStorage.getItem("List") || "[]"));
-  }, []);
+  }, [modal]);
 
   return (
     <Wrapper>
@@ -110,12 +80,7 @@ export default function ViewAllPage() {
           <div>Loading</div>
         )}
       </LeaderBoard>
-      {modal && (
-        <ModalBox>
-          <Profile>Profile</Profile>
-          <ProfileImg src={blobUser?.image} />
-        </ModalBox>
-      )}
+      {modal && <Modal setModal={setModal} blobUser={blobUser} />}
     </Wrapper>
   );
 }

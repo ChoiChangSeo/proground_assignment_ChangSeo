@@ -6,12 +6,11 @@ import Header from "./component/commons/Header";
 import Main from "./pages/main";
 
 const Wrapper = styled.div`
-  width: 700px;
+  width: 100vw;
 `;
 
 function App() {
   const view = useSelector((state: any) => state.viewAll);
-  console.log("aa", view);
   return (
     <Routes>
       <Route

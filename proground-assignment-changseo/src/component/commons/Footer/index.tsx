@@ -4,12 +4,12 @@ const Footers = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: 100vw;
   height: 80px;
   position: fixed;
   z-index: 1;
   background-color: white;
-  top: 90%;
+  bottom: 0;
   border-top: 1px solid lightgray;
 `;
 const Box = styled.div`
@@ -26,7 +26,6 @@ const ScoreFont = styled.span`
   color: #ff5100;
 `;
 export default function Footer() {
-  
   return (
     <Footers>
       <Box>

@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useSelector, useDispatch } from "react-redux";
 import { UserDataAction } from "../../../redux/store/actionCreators";
 import ViewAllPage from "../ViewAll/ViewAllContainer";
+import { breakPoints } from "../../../styles/media";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -141,7 +142,7 @@ export default function MainPage() {
   const userList = useSelector((state: any) => state.userData);
   const view = useSelector((state: any) => state.viewAll);
   const dispatch = useDispatch();
-  
+
   const viewLeaderBoard = () => {
     dispatch({ type: "viewAll/SET_VIEWALL" });
   };
