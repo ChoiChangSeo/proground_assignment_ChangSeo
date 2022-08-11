@@ -10,12 +10,10 @@ const GlobalStyles = createGlobalStyle`
 
  html,
 body {
-  width: 1200px;
-  height: auto;
   padding: 0;
   margin: 0;
   display: flex;
-  border: 1px solid blue;
+  justify-content: center;
 }
 ul{
   list-style:none
