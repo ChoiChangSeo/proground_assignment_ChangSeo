@@ -24,3 +24,9 @@ yarn install 후에 yarn start 해주시면 됩니다.
 ## 과제 시연
 
 gif를 통해 반응형 위주의 간단한 과제 시연을 올렸습니다.
+
+![1mov](https://user-images.githubusercontent.com/97964123/184296916-404fa24d-6370-4740-8c8e-bf7a7675e0ee.gif)
+
+![2](https://user-images.githubusercontent.com/97964123/184296993-0d7d0918-3401-4e26-ad2e-64d4110e25af.gif)
+
+![3](https://user-images.githubusercontent.com/97964123/184297002-ea697360-0c64-4d2c-9264-b9cb3eea6551.gif)
