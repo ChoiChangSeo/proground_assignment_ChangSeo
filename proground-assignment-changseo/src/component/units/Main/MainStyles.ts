@@ -13,6 +13,9 @@ export const ScoreBox = styled.div`
   width: 100%;
   padding: 20px 20px 20px 30px;
   margin-top: 3%;
+  @media ${breakPoints.tablet} {
+    margin-top: 5%;
+  }
   @media ${breakPoints.mobile} {
     margin-top: 8%;
   }

@@ -12,6 +12,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   margin-top: 4%;
   overflow-y: scroll;
+  @media ${breakPoints.tablet} {
+    margin-top: 8%;
+  }
   @media ${breakPoints.mobile} {
     margin-top: 13%;
   }
