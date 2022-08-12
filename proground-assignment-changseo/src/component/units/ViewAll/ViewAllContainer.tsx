@@ -1,15 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
+import { breakPoints } from "../../../styles/media";
 import Modal from "../../commons/Modal";
+import { ListType } from "../../commons/types/ListType";
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 750px;
+  height: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 4%;
   overflow-y: scroll;
+  @media ${breakPoints.mobile} {
+    margin-top: 13%;
+  }
 `;
 const LeaderBoard = styled.div`
   padding: 10px;
@@ -41,17 +46,12 @@ const EarnCoin = styled.div`
   text-align: center;
 `;
 
-interface ListType {
-  image?: string | undefined;
-  price?: string | undefined;
-  serialNumber?: string | undefined;
-}
 export default function ViewAllPage() {
   const [list, setList] = useState([]);
-  const [blobUser, setBlobUser] = useState<any>([]);
+  const [blobUser, setBlobUser] = useState<string>("");
   const [modal, setModal] = useState(false);
 
-  const openBlockUser = (e: any) => {
+  const openBlockUser = (e: MouseEvent<HTMLDivElement>) => {
     setBlobUser(e.currentTarget.id);
     setModal((prev) => !prev);
   };

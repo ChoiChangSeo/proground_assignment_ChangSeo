@@ -1,8 +1,8 @@
+import { Dispatch, MouseEvent, SetStateAction } from "react";
 import styled from "styled-components";
-import { useEffect } from "react";
 
 const ModalBox = styled.div`
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -46,12 +46,20 @@ const Button = styled.button`
   border-radius: 10px;
   background-color: white;
 `;
-export default function Modal(props: any) {
+
+interface IPropsModal {
+  blobUser: string;
+  setModal: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function Modal(props: IPropsModal) {
   const blobUser = JSON.parse(props.blobUser);
 
-  const onClickBlockUser = (e: any) => {
+  const onClickBlockUser = (e: MouseEvent<HTMLButtonElement>) => {
     const list = JSON.parse(localStorage.getItem("List") || "[]");
-    const temp = list.filter((el: any) => el.serialNumber !== e.target.id);
+    const temp = list.filter(
+      (el: any) => el.serialNumber !== (e.target as Element).id
+    );
     localStorage.setItem("List", JSON.stringify(temp));
     props.setModal(false);
   };
