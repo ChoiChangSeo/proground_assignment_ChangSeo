@@ -11,7 +11,7 @@ export const ScoreBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 20px;
+  padding: 20px 20px 20px 30px;
   margin-top: 3%;
   @media ${breakPoints.mobile} {
     margin-top: 8%;
@@ -52,7 +52,7 @@ export const EstimatedBox = styled.div`
   flex-direction: column;
   width: 100%;
   background: linear-gradient(to top, white, #ececec, #ebebeb, #dfdfdf);
-  padding: 20px;
+  padding: 20px 20px 20px 30px;
 `;
 
 export const EstimatedFont = styled.div`
@@ -87,7 +87,7 @@ export const LeaderBoardBox = styled.div`
   display: flex;
   flex-direction: column;
   background: linear-gradient(to bottom, white, #e9e9e9, #dfdfdf);
-  padding: 20px;
+  padding: 20px 20px 20px 30px;
   margin-bottom: 80px;
 `;
 
