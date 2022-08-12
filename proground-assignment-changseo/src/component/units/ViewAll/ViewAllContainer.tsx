@@ -26,6 +26,7 @@ const List = styled.div`
   justify-content: space-around;
   align-items: center;
   margin-bottom: 10px;
+  cursor: pointer;
 `;
 const Leader = styled.div`
   width: 3%;

@@ -101,6 +101,7 @@ export const LeaderBoardMent = styled.div`
 
 export const ViewAll = styled.div`
   font-weight: normal;
+  cursor: pointer;
 `;
 
 export const LeaderBoard = styled.div`
